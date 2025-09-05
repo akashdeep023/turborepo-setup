@@ -5,8 +5,10 @@ export default async function IndexPage() {
 
 	return (
 		<div>
-			<h1>Turborepo Setup</h1>
-			<h3>Users | Count: {users.length}</h3>
+			<h1 className="text-3xl font-bold mb-10">Turborepo Setup</h1>
+			<h3 className="text-xl font-semibold">
+				Users | Count: <span className="font-mono">{users.length}</span>
+			</h3>
 			<pre>{JSON.stringify(users, null, 2)}</pre>
 		</div>
 	);
