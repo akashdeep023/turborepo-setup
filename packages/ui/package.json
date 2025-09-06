@@ -4,17 +4,16 @@
 	"private": true,
 	"type": "module",
 	"exports": {
-		"./components/*": "./src/components/*.tsx",
-		"./utils/*": "./src/lib/utils/*",
-		"./hooks/*": [
-			"./src/hooks/*.ts",
-			"./src/hooks/*.tsx"
-		],
-		"./lib/*": "./src/lib/*.ts",
-		"./globals.css": "./src/styles/globals.css"
+		"./*": "./dist/*.js",
+		"./styles.css": "./dist/index.css"
 	},
 	"scripts": {
-		"lint": "eslint . --max-warnings 0"
+		"build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+		"build:components": "tsc",
+		"check-types": "tsc --noEmit",
+		"dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+		"dev:components": "tsc --watch",
+		"lint": "eslint src --max-warnings 0"
 	},
 	"dependencies": {
 		"@radix-ui/react-label": "^2.1.7",
@@ -28,6 +27,8 @@
 		"@repo/eslint-config": "*",
 		"@repo/tailwind-config": "*",
 		"@repo/typescript-config": "*",
+		"@tailwindcss/cli": "^4.1.13",
+		"@tailwindcss/postcss": "^4.1.13",
 		"@types/node": "^20.11.24",
 		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",
@@ -36,7 +37,6 @@
 		"lucide-react": "^0.542.0",
 		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^4.1.13",
-		"@tailwindcss/postcss": "^4.1.13",
 		"typescript": "5.5.4"
 	}
 }
