@@ -20,7 +20,7 @@
 		"@repo/eslint-config": "*",
 		"@repo/tailwind-config": "*",
 		"@repo/typescript-config": "*",
-		"@repo/ui": "^0.0.0",
+		"@repo/ui": "*",
 		"@types/node": "^20.11.24",
 		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",
