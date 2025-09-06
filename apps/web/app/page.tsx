@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { prisma } from "@repo/database";
 
 export default async function IndexPage() {
