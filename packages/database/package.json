@@ -1,12 +1,8 @@
 {
 	"name": "@repo/database",
 	"version": "1.0.0",
-	"private": true,
 	"exports": {
-		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		}
+		".": "./src/client.ts"
 	},
 	"scripts": {
 		"db:migrate:deploy": "prisma migrate deploy",
@@ -16,9 +12,6 @@
 		"db:generate": "prisma generate",
 		"format": "prisma format",
 		"lint": "eslint . --max-warnings 0",
-		"prebuild": "npm run db:generate && rimraf dist",
-		"build": "tsup src/index.ts --dts --format esm,cjs --out-dir dist",
-		"predev": "npm run db:generate",
 		"studio": "prisma studio"
 	},
 	"dependencies": {
