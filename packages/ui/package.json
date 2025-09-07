@@ -8,10 +8,10 @@
 		"./styles.css": "./dist/index.css"
 	},
 	"scripts": {
-		"build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+		"build:styles": "npx tailwindcss -i ./src/styles.css -o ./dist/index.css",
 		"build:components": "tsc",
 		"check-types": "tsc --noEmit",
-		"dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+		"dev:styles": "npx tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
 		"dev:components": "tsc --watch",
 		"lint": "eslint src --max-warnings 0"
 	},
@@ -32,9 +32,11 @@
 		"@types/node": "^20.11.24",
 		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",
+		"autoprefixer": "^10.4.21",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-react": "^0.542.0",
+		"postcss": "^8.5.6",
 		"tailwind-merge": "^3.3.1",
 		"tailwindcss": "^4.1.13",
 		"typescript": "5.5.4"
