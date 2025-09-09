@@ -10,7 +10,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<Header />
-				<main className="flex flex-col items-center justify-between min-h-[80vh] p-24">
+				<main className="flex flex-col items-center justify-between min-h-[80vh] p-12 pt-24">
 					{children}
 				</main>
 				<Footer />
