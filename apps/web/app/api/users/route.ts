@@ -2,6 +2,7 @@ import { prisma } from "@repo/database";
 
 export async function GET() {
 	try {
+		await prisma.$connect();
 		const users = await prisma.user.findMany();
 		return Response.json({
 			users,

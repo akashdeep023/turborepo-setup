@@ -1,15 +1,61 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+	const [stars, setStars] = useState<number | null>(null);
+
+	useEffect(() => {
+		fetch("/api/stars")
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setStars(data.stars);
+			});
+	}, []);
 	return (
-		<div className="flex items-center justify-between gap-2 m-auto container px-20 py-2 shadow-sm fixed">
-			<span className="font-bold text-lg">Turborepo Setup</span>
+		<div className="flex items-center justify-between gap-2 m-auto container px-20 py-2 shadow-sm fixed border-b backdrop-blur-2xl border-muted z-50">
+			<span className="font-bold text-lg flex items-center gap-2">
+				<svg
+					fill="none"
+					viewBox="0 0 24 24"
+					height="24"
+					width="24"
+					xmlns="http://www.w3.org/2000/svg"
+					className="-rotate-90"
+				>
+					<path
+						xmlns="http://www.w3.org/2000/svg"
+						d="M18.8061 12.9187C19.1275 12.853 19.4348 12.7487 19.7231 12.6109C21.0698 11.9671 22 10.5922 22 9C22 6.79086 20.2092 5 18 5C16.8153 5 15.7498 5.51635 15.0188 6.33309C14.6505 6.74461 14.6855 7.37681 15.097 7.74513C15.5085 8.11346 16.1407 8.07844 16.5091 7.66691C16.8767 7.25616 17.4078 7.00001 18 7C18.069 7 18.1373 7.0035 18.2045 7.01033C18.4734 7.03764 18.7266 7.11823 18.9533 7.24139C19.5768 7.58007 20 8.24061 20 9C20 9.82843 19.4963 10.5392 18.7785 10.8428C18.5392 10.944 18.2762 11 18.0001 11H18H3C2.44772 11 2 11.4477 2 12C2 12.5523 2.44772 13 3 13H18H18C18.2762 13 18.5458 12.972 18.8061 12.9187ZM5 10H10.5H10.5L10.5162 9.99995C10.5969 9.99944 10.6768 9.99509 10.7556 9.98709C12.0163 9.85908 13 8.79442 13 7.5C13 6.11929 11.8807 5 10.5 5C9.75951 5 9.09317 5.32323 8.63683 5.83309C8.26851 6.24461 8.30353 6.87681 8.71505 7.24513C9.12658 7.61346 9.75878 7.57844 10.1271 7.16691C10.2201 7.06303 10.352 7.00001 10.5 7C10.7761 7 11 7.22386 11 7.5C11 7.77614 10.7762 7.99999 10.5 8H10.5H5C4.44772 8 4 8.44772 4 9C4 9.55228 4.44772 10 5 10ZM16.5 14L8 14C7.44771 14 7 14.4477 7 15C7 15.5523 7.44771 16 8 16L16.5 16C16.7762 16 17 16.2239 17 16.5C17 16.7761 16.7761 17 16.5 17C16.352 17 16.2201 16.937 16.1271 16.8331C15.7588 16.4216 15.1266 16.3865 14.7151 16.7549C14.3035 17.1232 14.2685 17.7554 14.6368 18.1669C15.0932 18.6768 15.7595 19 16.5 19C17.8807 19 19 17.8807 19 16.5C19 15.2056 18.0163 14.1409 16.7556 14.0129C16.6768 14.0049 16.5969 14.0006 16.5162 14.0001L16.5 14Z"
+						fill="#3C4CF9"
+					></path>
+				</svg>{" "}
+				Turborepo Setup
+			</span>
 			<div className="flex items-center gap-2">
-				<span className="font-semibold text-sm">Stars 1</span>
+				<span className="font-semibold text-sm flex gap-1">
+					<svg
+						fill="none"
+						viewBox="0 0 24 24"
+						height="20"
+						width="20"
+						xmlns="http://www.w3.org/2000/svg"
+						className="dark:invert-100"
+					>
+						<path
+							xmlns="http://www.w3.org/2000/svg"
+							d="M12 2.5C12.3788 2.5 12.725 2.714 12.8944 3.05279L15.4733 8.2106L21.1439 9.03541C21.5206 9.0902 21.8335 9.35402 21.9511 9.71599C22.0687 10.078 21.9706 10.4753 21.6981 10.741L17.571 14.7649L18.4994 20.4385C18.5607 20.8135 18.4043 21.1908 18.0956 21.4124C17.787 21.6339 17.3794 21.6614 17.0438 21.4834L12 18.8071L6.95621 21.4834C6.62059 21.6614 6.21303 21.6339 5.90437 21.4124C5.5957 21.1908 5.43927 20.8135 5.50062 20.4385L6.42903 14.7649L2.3019 10.741C2.02939 10.4753 1.93133 10.078 2.04894 9.71599C2.16655 9.35402 2.47943 9.0902 2.85606 9.03541L8.52667 8.2106L11.1056 3.05279C11.275 2.714 11.6212 2.5 12 2.5ZM12 5.73607L10.0819 9.57221C9.93558 9.86491 9.65528 10.0675 9.33144 10.1146L5.14839 10.723L8.1981 13.6965C8.43179 13.9243 8.53958 14.2519 8.48687 14.574L7.80001 18.7715L11.5313 16.7917C11.8244 16.6361 12.1756 16.6361 12.4687 16.7917L16.2 18.7715L15.5131 14.574C15.4604 14.2519 15.5682 13.9243 15.8019 13.6965L18.8516 10.723L14.6686 10.1146C14.3447 10.0675 14.0644 9.86491 13.9181 9.57221L12 5.73607Z"
+							fill="#0D0D0D"
+						></path>
+					</svg>{" "}
+					{stars ?? "…"}
+				</span>
 				<span className="underline underline-offset-2 decoration-1 bg-black/0 hover:bg-black/10 rounded-full p-2">
 					<Link
 						href={"https://github.com/akashdeep023/turborepo-setup"}
 						target="_blank"
+						rel="noopener noreferrer"
+						className="dark:invert-100"
 					>
 						<svg
 							fill="none"
