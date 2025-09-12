@@ -7,10 +7,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className="dark">
-			<body>
+		<html lang="en">
+			<body className="w-full">
 				<Header />
-				<main className="flex flex-col items-center justify-between min-h-[80vh] p-12 pt-24">
+				<main className="flex flex-col items-center justify-between min-h-[80vh] p-4 pt-16 md:pt-24">
 					{children}
 				</main>
 				<Footer />

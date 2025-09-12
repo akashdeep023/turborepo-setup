@@ -14,7 +14,7 @@ export default function Header() {
 			});
 	}, []);
 	return (
-		<div className="flex items-center justify-between gap-2 m-auto container px-20 py-2 shadow-sm fixed border-b backdrop-blur-2xl border-muted z-50">
+		<div className="flex items-center justify-between gap-2 m-auto px-4 md:px-20 py-2 shadow-sm fixed border-b backdrop-blur-2xl border-muted z-50 w-full">
 			<span className="font-bold text-lg flex items-center gap-2">
 				<svg
 					fill="none"
