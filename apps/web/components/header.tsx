@@ -9,13 +9,15 @@ export default function Header() {
 		fetch("/api/stars")
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				setStars(data.stars);
 			});
 	}, []);
 	return (
 		<div className="flex items-center justify-between gap-2 m-auto px-4 md:px-20 py-2 shadow-sm fixed border-b backdrop-blur-2xl border-muted z-50 w-full">
-			<span className="font-bold text-lg flex items-center gap-2">
+			<Link
+				href={"/"}
+				className="font-bold text-lg flex items-center gap-2"
+			>
 				<svg
 					fill="none"
 					viewBox="0 0 24 24"
@@ -31,7 +33,7 @@ export default function Header() {
 					></path>
 				</svg>{" "}
 				Turborepo Setup
-			</span>
+			</Link>
 			<div className="flex items-center gap-2">
 				<span className="font-semibold text-sm flex gap-1">
 					<svg

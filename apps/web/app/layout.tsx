@@ -10,7 +10,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className="w-full">
 				<Header />
-				<main className="flex flex-col items-center justify-between min-h-[80vh] p-4 pt-16 md:pt-24">
+				<main className="flex flex-col items-center justify-between min-h-[80vh]">
 					{children}
 				</main>
 				<Footer />

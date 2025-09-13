@@ -1,7 +1,8 @@
 export async function GET() {
 	return Response.json({
+		message: "Hello World!",
+		success: true,
 		status: 200,
-		message: "Success",
 		usersUrl: "/api/users",
 	});
 }

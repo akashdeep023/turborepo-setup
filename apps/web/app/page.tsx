@@ -10,10 +10,10 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<>
-			<section className="flex flex-col items-center justify-center text-center pt-12 pb-5 px-6">
+			<section className="flex flex-col items-center justify-center text-center pt-24 md:pt-28 pb-5 px-6">
 				<h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 flex items-center flex-wrap justify-center gap-2">
 					Welcome to{" "}
-					<span className="text-primary text-nowrap flex items-center gap-3">
+					<span className="text-nowrap flex items-center gap-3 bg-gradient-to-t from-blue-400 to-indigo-600 bg-clip-text text-transparent">
 						Turborepo Setup
 						<svg
 							fill="none"
@@ -64,7 +64,7 @@ export default function Home() {
 			</section>
 			<section className="pt-12 pb-6 px-6">
 				<div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-					<Card className="shadow-lg">
+					<Card className="shadow-lg hover:bg-gradient-to-t from-blue-400 to-indigo-600 hover:text-white cursor-pointer">
 						<CardHeader>
 							<CardTitle className="text-xl">
 								⚡ Fast Development
@@ -78,7 +78,7 @@ export default function Home() {
 						</CardContent>
 					</Card>
 
-					<Card className="shadow-lg">
+					<Card className="shadow-lg hover:bg-gradient-to-t from-blue-400 to-indigo-600 hover:text-white cursor-pointer">
 						<CardHeader>
 							<CardTitle className="text-xl">
 								🗄️ Database Ready
@@ -92,7 +92,7 @@ export default function Home() {
 						</CardContent>
 					</Card>
 
-					<Card className="shadow-lg">
+					<Card className="shadow-lg hover:bg-gradient-to-t from-blue-400 to-indigo-600 hover:text-white cursor-pointer">
 						<CardHeader>
 							<CardTitle className="text-xl">
 								🎨 Beautiful UI

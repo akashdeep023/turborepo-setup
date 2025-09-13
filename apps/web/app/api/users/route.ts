@@ -5,14 +5,16 @@ export async function GET() {
 		await prisma.$connect();
 		const users = await prisma.user.findMany();
 		return Response.json({
-			users,
+			message: "All Users!",
+			success: true,
 			status: 200,
-			message: "Success",
+			users,
 		});
 	} catch (error) {
 		return Response.json({
+			message: "Error connecting to database",
+			success: false,
 			status: 500,
-			message: "Error",
 		});
 	}
 }
