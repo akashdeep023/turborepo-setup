@@ -32,9 +32,27 @@ export default function Home() {
 					</span>
 				</h1>
 				<p className="text-lg max-w-2xl mb-8 text-muted-foreground">
-					This is a modern web + API setup using Turborepo, Prisma,
-					PostgreSQL, Tailwind, and Shadcn UI. Everything is wired and
-					ready to build amazing apps.
+					This is a modern web + API setup using{" "}
+					<span className="text-xl font-bold bg-gradient-to-t from-blue-400 to-indigo-600 bg-clip-text text-transparent">
+						Turborepo
+					</span>
+					,{" "}
+					<span className="text-xl font-bold bg-gradient-to-t from-blue-400 to-indigo-600 bg-clip-text text-transparent">
+						Prisma
+					</span>
+					,{" "}
+					<span className="text-xl font-bold bg-gradient-to-t from-blue-400 to-indigo-600 bg-clip-text text-transparent">
+						PostgreSQL
+					</span>
+					,{" "}
+					<span className="text-xl font-bold bg-gradient-to-t from-blue-400 to-indigo-600 bg-clip-text text-transparent">
+						Tailwind
+					</span>
+					, and{" "}
+					<span className="text-xl font-bold bg-gradient-to-t from-blue-400 to-indigo-600 bg-clip-text text-transparent">
+						Shadcn UI
+					</span>
+					. Everything is wired and ready to build amazing apps.
 				</p>
 				<Link
 					href={"https://github.com/akashdeep023/turborepo-setup"}
